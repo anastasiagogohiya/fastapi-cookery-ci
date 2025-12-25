@@ -29,4 +29,4 @@ jobs:
         python-version: '3.11'
     - run: pip install --upgrade pip
     - run: pip install -r requirements.txt -r requirements-dev.txt
-    - run: pytest -v
+    - run: pytest tests/ -v
