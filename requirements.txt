@@ -1,0 +1,6 @@
+fastapi==0.123.5
+loguru==0.7.3
+pydantic==2.12.3
+SQLAlchemy==2.0.44
+uvicorn==0.38.0
+aiosqlite==0.21.0

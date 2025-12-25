@@ -1,0 +1,44 @@
+# конф файла для black, isort, flake8, mypy
+[tool.black]
+line-length = 88
+target-version = ['py312']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.git
+  | \.mypy_cache
+  | \.venv
+  | __pycache__
+  | dist
+  | build
+)/
+'''
+
+
+[tool.isort]
+profile = "black"
+line_length = 88
+known_first_party = ["app"]
+combine_as_imports = true
+include_trailing_comma = true
+multi_line_output = 3
+
+
+[tool.mypy]
+python_version = "3.12"
+warn_unused_configs = true
+disallow_untyped_defs = true
+ignore_missing_imports = true
+strict_optional = true
+exclude = [
+  '\.venv',
+  'tests/.*',
+]
+
+
+
+[tool.flake8]
+max-line-length = 88
+extend-ignore = ["E203", "W503"]
+exclude = [".git", "__pycache__", ".venv", "dist", "build"]
+extend-select = ["B", "B9", "P1"]  # bugbear + pie
